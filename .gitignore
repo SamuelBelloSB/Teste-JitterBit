@@ -1,0 +1,18 @@
+# --- Dependências (O mais importante!) ---
+node_modules/
+
+# --- Variáveis de Ambiente e Segurança (CRÍTICO) ---
+# Ignora o arquivo que guarda a senha do seu Banco de Dados
+.env
+
+# --- Logs de erro ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Arquivos de Sistema Operacional (Lixo) ---
+.DS_Store           # Mac
+Thumbs.db           # Windows
+
+# --- Editor de Código (VS Code) ---
+.vscode/
