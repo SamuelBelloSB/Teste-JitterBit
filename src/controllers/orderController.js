@@ -14,19 +14,20 @@ const mapOrderData = (data) => {
     };
 };
 
+// Criar Pedido
 const createOrder = async (req, res) => {
     console.log("Chegou uma requisição! Dados recebidos:", req.body);
 
     const client = await pool.connect(); // Pega um cliente para a transação
 
     try {
-        // 1. Transformação dos dados
+        // Transformação dos dados
         const cleanData = mapOrderData(req.body);
 
-        // 2. Inicia transação
+        // Inicia transação
         await client.query('BEGIN');
 
-        // 3. Insere pedido
+        // Insere pedido
         const orderQuery = `
             INSERT INTO orders ("orderId", "value", "creationDate")
             VALUES ($1, $2, $3)
@@ -34,7 +35,7 @@ const createOrder = async (req, res) => {
         `;
         await client.query(orderQuery, [cleanData.orderId, cleanData.value, cleanData.creationDate]);
 
-        // 4. Insere itens
+        // Insere itens
         const itemQuery = `
             INSERT INTO items ("orderId", "productId", "quantity", "price")
             VALUES ($1, $2, $3, $4)
@@ -49,7 +50,7 @@ const createOrder = async (req, res) => {
             ]);
         }
 
-        // 5. Confirma transação
+        // Confirma transação
         await client.query('COMMIT');
 
         res.status(201).json({ 
@@ -66,6 +67,7 @@ const createOrder = async (req, res) => {
     }
 };
 
+// Buscar Pedido
 const getOrder = async (req, res) => {
     const { id } = req.params;
     
@@ -100,4 +102,45 @@ const getOrder = async (req, res) => {
     }
 };
 
-module.exports = { createOrder, getOrder };
+// Listar Pedidos
+const listOrders = async (req, res) => {
+    try {
+        // Tenta buscar todos os pedidos
+        const ordersResult = await pool.query('SELECT * FROM orders');
+        const orders = ordersResult.rows;
+
+        // Se não tiver pedidos, retorna lista vazia
+        if (orders.length === 0) {
+            return res.json([]);
+        }
+
+        // Tenta buscar todos os itens de uma vez
+        const itemsResult = await pool.query('SELECT * FROM items');
+        const items = itemsResult.rows;
+
+        // Montar a resposta juntando Pedido com Itens
+        const response = orders.map(order => {
+            // Filtra os itens que pertencem a um pedido específico
+            const orderItems = items.filter(item => item.orderId === order.orderId);
+
+            return {
+                orderId: order.orderId,
+                value: parseFloat(order.value),
+                creationDate: order.creationDate,
+                items: orderItems.map(item => ({
+                    productId: item.productId,
+                    quantity: item.quantity,
+                    price: parseFloat(item.price)
+                }))
+            };
+        });
+
+        res.json(response);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Erro ao listar pedidos" });
+    }
+};
+
+module.exports = { createOrder, getOrder, listOrders};
