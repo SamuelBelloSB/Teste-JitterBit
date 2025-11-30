@@ -143,4 +143,58 @@ const listOrders = async (req, res) => {
     }
 };
 
-module.exports = { createOrder, getOrder, listOrders};
+// Atualizar pedidos
+const updateOrder = async (req, res) => {
+    const { id } = req.params;
+    const { valorTotal } = req.body;
+
+    try {
+        // Tentar ver se o pedido existe antes de tentar atualizar e trata erro 404
+        const checkQuery = await pool.query('SELECT * FROM orders WHERE "orderId" = $1', [id]);
+        if (checkQuery.rows.length === 0) {
+            return res.status(404).json({ error: "Pedido não encontrado para atualização." });
+        }
+
+        // Atualiza a tabela Orders
+        const updateQuery = `
+            UPDATE orders 
+            SET "value" = $1 
+            WHERE "orderId" = $2 
+            RETURNING *
+        `;
+        
+        const result = await pool.query(updateQuery, [valorTotal, id]);
+
+        res.json({
+            message: "Pedido atualizado com sucesso!",
+            order: result.rows[0]
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Erro ao atualizar pedido" });
+    }
+};
+
+// Apagar pedido
+const deleteOrder = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        // Retorna quantas linhas foram apagadas
+        const result = await pool.query('DELETE FROM orders WHERE "orderId" = $1', [id]);
+
+        // Se rowCount for 0, significa que nenhum pedido com esse ID foi encontrado
+        if (result.rowCount === 0) {
+            return res.status(404).json({ error: "Pedido não encontrado para exclusão." });
+        }
+
+        res.json({ message: "Pedido deletado com sucesso!" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Erro ao deletar pedido" });
+    }
+};
+
+module.exports = { createOrder, getOrder, listOrders, updateOrder, deleteOrder};
