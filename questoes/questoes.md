@@ -199,7 +199,7 @@ Escreva abaixo o resultado retornado por cada função:
 
 let idade = 27
 const nome = 'Samuel'
-var cargo = 'Cargo'
+var cargo = 'Analista'
 
 ```
 

@@ -114,6 +114,9 @@ Esta seção é dedicada à transparência no processo de desenvolvimento deste 
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Samuel Bello**.
+Desenvolvido por **Samuel Bello Ferreira**.
+
+- 📫 Contate-me no email: samuelbellocontato@gmail.com
+- ☎️ Contate-me no telefone: (21)98813-7123
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samuelbellosb/)
