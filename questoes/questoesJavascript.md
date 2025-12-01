@@ -33,7 +33,7 @@
 
 ---
 
-## 4. **Qual é a função do método “Array.filter()”? (Nota: 0,2) **
+## 4. **Qual é a função do método “Array.filter()”? (Nota: 0,2)**
 
 - a) Adicionar elementos ao início do array. 
 - b) Remover elementos do array com base em uma função de filtro. 
@@ -44,7 +44,7 @@
 
 ---
 
-##  5. **O que é async/await em JavaScript? (Nota: 0,2)  **
+##  5. **O que é async/await em JavaScript? (Nota: 0,2)**
 
 - a) Um método para criar funções síncronas em JavaScript. 
 - b) Uma técnica para manipulação de erros em operações assíncronas. 
@@ -55,7 +55,7 @@
 
 ---
 
-## 6. **Qual é a sintaxe correta para definir uma função assíncrona chamada "getData"? (Nota: 0,2)  **
+## 6. **Qual é a sintaxe correta para definir uma função assíncrona chamada "getData"? (Nota: 0,2)**
 
 - a) async getData() { return new Promise({}); } 
 - b) getData() { return new Promise({}); } 
@@ -97,7 +97,7 @@ case "B":
 
 ---
 
-## 8.  Escreva uma função em JavaScript chamada “somaImpares” que recebe um número inteiro positivo “n” como parâmetro e retorna a soma de todos os números ímpares de 1 até n. (Nota: 0,6) **
+## 8.  **Escreva uma função em JavaScript chamada “somaImpares” que recebe um número inteiro positivo “n” como parâmetro e retorna a soma de todos os números ímpares de 1 até n. (Nota: 0,6)**
 
 Exemplo:
 somaImpares(5); // Saída esperada: 9 (1 + 3 + 5) 
@@ -136,7 +136,7 @@ function somaImpares(n)
 
 ---
 
-## 9. **Escreva uma função chamada” inverterPalavra” que recebe uma string como parâmetro e retorna a string com as letras invertidas. (Nota: 0,6) **
+## 9. **Escreva uma função chamada” inverterPalavra” que recebe uma string como parâmetro e retorna a string com as letras invertidas. (Nota: 0,6)**
 
 Exemplo:
 inverterPalavra("javascript"); // Saída esperada: "tpircsavaj"
@@ -184,6 +184,61 @@ Escreva abaixo o resultado retornado por cada função:
 
 ---
 
-**11. Como você pode percorrer e mapear um array JSON em JavaScript? Explique como usar métodos como "map", "forEach" ou "for...of" para iterar e manipular os elementos do array. (Nota: 0,7)**
+11. **Como você pode percorrer e mapear um array JSON em JavaScript? Explique como usar métodos como "map", "forEach" ou "for...of" para iterar e manipular os elementos do array. (Nota: 0,7)**
 
 **Resposta: Podemos percorrer e mapear um array JSON em JavaScript utilizando métodos nativos, como .map() e forEach().<br> O método ".map()" é usado para produzir um novo array atuando como uma função de manipulação, onde cada elemento desse array é submetido e retornando um novo array novo array pós manipulação. A vantagem do ".map()" se dá pelo retorno de um array manipulado sem modificar o array original.<br>O método ".forEach()" é usado para percorrer um array de forma iterativa executando algo sobre cada alemento do array.<br>Já o "for...of" tem controle sobre as entradas, então é possível percorrer o array e encerrar a iteração mais cedo de acordo com alguma condição com o uso do "break" ou "continue"**
+
+---
+
+12. **O que são variáveis em JavaScript? Explique como declarar e atribuir valores a uma variável.(Nota: 0,7)**
+
+**Resposta: Variáveis são como caixas armazenadoras, usadas para armazenar dados ou informação. Em Java por exemplo, essas variáveis são menos flexíveis e é preciso definir antecipadamente qual tipo de dado ou informação aquela variável será capaz de armazanar, essa caracteristica é chamada de tipagem forte. Já em JavaScript as variáveis são flexiveis, não precisando obrigatóriamente declarar antecipadamente que tipo de dados ou informação será armazenada, chamamos essa característica de tipagem flexível.<br>No JavaScript existem 3 formas de criar uma variável, que são elas:<br>- let: é a forma mais comum e recomendada de criar uma variável cujo o valor espera-se que mude no futuro.<br>- const: é usada para declarar variáveis constantes, ou seja, variáveis cujo os valores deve permanecer o mesmo durante toda execução do programa.<br>- var: é a forma mais antiga e não recomendada de criar uma variável, diferente do let e var que tem o escopo em bloco, o escopo de uma variável var é de função, permitindo 'vazamento de escopo', ou seja ela não respeita os limites das {} de um 'if' ou 'for', gerando problemas de execução.**
+
+---
+
+13. **Em JavaScript, é possível ter múltiplas condições em uma estrutura "if/else"? Descreva como usar operadores lógicos (como "&&" e "||") para combinar condições. (Nota: 0,6)**
+
+**Resposta: Sim é possível ter múltiplas condições em uma estrutura "if/else". Isso é muito utilizado para validar dados.<br>Operador && (AND/E) dentro de um if retorna verdadeira se TODAS as condições forem verdadeiras. Se uma falhar, tudo falhará, ou seja preciso que a condição A seja verdade E que B seja verdade também:<br>**
+
+```javascript
+let usuario = "Samuel";
+let senha = "B3110";
+
+if (usuario === "Samuel" && senha ==="123"){
+    console.log("Acesso liberado!");
+} else {
+    console.log("Usuário ou senha incorretos.")
+}
+```
+
+**Operador || (OR/OU) dentro de um if retorna verdadeira se PELO MENOS UMA das condições seja verdadeira. Se ambas forem falsas tudo falhará, ou seja preciso que a condição A seja verdade OU que B seja verdade:**
+
+```javascript
+let corUm = "Vermelho";
+let corDois= "Verde";
+
+// Basta uma ser verdadeira para entrar no IF
+if (corUm || corDois === "Vermelho") {
+    console.log("Uma cor primária foi selecionada");
+} else {
+    console.log("Nenhuma cor primária foi selecionada");
+}
+```
+
+**Combinando "&&" e "||"  podemos criar lógicas mais complexas.**
+
+```javascript
+let formacao = "SI";
+let anosDeExperiencia = 0;
+
+// (Tem mais de 2 anos de experiência) OU (Tem formação na área de SI)
+if (anosDeExperiencia >= 2 || formacao = "SI"){
+    console.log("Aprovado para o processo");
+} else {
+    console.log("Recusado para o processo");
+}
+
+```
+
+---
+
