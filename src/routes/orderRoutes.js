@@ -4,8 +4,10 @@ const orderController = require('../controllers/orderController');
 
 // Definição das rotas conforme o desafio
 router.post('/order', orderController.createOrder);
-router.get('/order/list', orderController.listOrders);
 router.get('/order/:id', orderController.getOrder);
+
+// Opcionais
+router.get('/order/list', orderController.listOrders);
 router.put('/order/:id', orderController.updateOrder);
 router.delete('/order/:id', orderController.deleteOrder);
 
