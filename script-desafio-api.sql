@@ -1,3 +1,10 @@
+-- COMANDO PARA CRIAR O DATABASE
+CREATE DATABASE desafio_api;
+
+-- Garante que as tabelas sejam criadas na ordem correta, se já existirem
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS orders;
+
 -- 1. Cria a tabela de Pedidos
 CREATE TABLE orders (
     "orderId" VARCHAR(50) PRIMARY KEY,

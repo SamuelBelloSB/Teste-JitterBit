@@ -192,7 +192,16 @@ Escreva abaixo o resultado retornado por cada função:
 
 ## 12. **O que são variáveis em JavaScript? Explique como declarar e atribuir valores a uma variável.(Nota: 0,7)**
 
-**Resposta: Variáveis são como caixas armazenadoras, usadas para armazenar dados ou informação. Em Java por exemplo, essas variáveis são menos flexíveis e é preciso definir antecipadamente qual tipo de dado ou informação aquela variável será capaz de armazanar, essa caracteristica é chamada de tipagem forte. Já em JavaScript as variáveis são flexiveis, não precisando obrigatóriamente declarar antecipadamente que tipo de dados ou informação será armazenada, chamamos essa característica de tipagem flexível.<br>No JavaScript existem 3 formas de criar uma variável, que são elas:<br>- let: é a forma mais comum e recomendada de criar uma variável cujo o valor espera-se que mude no futuro.<br>- const: é usada para declarar variáveis constantes, ou seja, variáveis cujo os valores deve permanecer o mesmo durante toda execução do programa.<br>- var: é a forma mais antiga e não recomendada de criar uma variável, diferente do let e var que tem o escopo em bloco, o escopo de uma variável var é de função, permitindo 'vazamento de escopo', ou seja ela não respeita os limites das {} de um 'if' ou 'for', gerando problemas de execução.**
+**Resposta: Variáveis são como caixas armazenadoras, usadas para armazenar dados ou informação. Em Java por exemplo, essas variáveis são menos flexíveis e é preciso definir antecipadamente qual tipo de dado ou informação aquela variável será capaz de armazanar, essa caracteristica é chamada de tipagem forte. Já em JavaScript as variáveis são flexiveis, não precisando obrigatóriamente declarar antecipadamente que tipo de dados ou informação será armazenada, chamamos essa característica de tipagem flexível.<br><br>No JavaScript existem 3 formas de criar uma variável, que são elas:<br>- let: é a forma mais comum e recomendada de criar uma variável cujo o valor espera-se que mude no futuro.<br>- const: é usada para declarar variáveis constantes, ou seja, variáveis cujo os valores deve permanecer o mesmo durante toda execução do programa.<br>- var: é a forma mais antiga e não recomendada de criar uma variável, diferente do let e var que tem o escopo em bloco, o escopo de uma variável var é de função, permitindo 'vazamento de escopo', ou seja ela não respeita os limites das chaves de um 'if' ou 'for', gerando problemas de execução.**
+
+```javascript
+// Como atribuir valores a variáveis
+
+let idade = 27
+const nome = 'Samuel'
+var cargo = 'Cargo'
+
+```
 
 ---
 
@@ -294,7 +303,7 @@ try {
 - c) SELECT COLUMNS 
 - d) SELECT FULL
 
-**Resposta: b) SELECT ***
+**Resposta: b) SELECT * .**
 
 ---
 
@@ -355,7 +364,7 @@ try {
 
 ---
 
-## 2. **O que significa API (Interface de Programação de Aplicativos) em integração de sistemas? (Nota:0,2) **
+## 2. **O que significa API (Interface de Programação de Aplicativos) em integração de sistemas? (Nota:0,2)**
 
 - a) Uma Arquitetura de Programação de Aplicativos que define os padrões de codificação. 
 - b) Uma linguagem de programação usada para criar aplicativos. 
