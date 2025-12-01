@@ -89,8 +89,6 @@ O projeto possui relacionamento **1:N** (Um para Muitos), onde um Pedido pode te
 * **Tabela `orders`**: `orderId` (PK), `value`, `creationDate`.
 * **Tabela `items`**: `id` (PK), `orderId` (FK), `productId`, `quantity`, `price`.
 
----
-
 ## 🤖 Transparência e Inteligência Artificial (IA)
 
 Esta seção é dedicada à transparência no processo de desenvolvimento deste projeto.
@@ -98,7 +96,7 @@ Esta seção é dedicada à transparência no processo de desenvolvimento deste 
 * **Uso de IA:** Este projeto utilizou uma ferramenta de **Inteligência Artificial Generativa** como co-piloto e assistente de mentoria e estudos.
 * **Função da IA:** A ferramenta foi utilizada principalmente para:
     * Revisão e validação da arquitetura (Estrutura do Express, uso de **Transações** em SQL).
-    * Diagnóstico e solução de erros de infraestrutura (ex: erro `42P01` do PostgreSQL).
+    * Diagnóstico e solução de erros.
     * Estruturação e formatação da documentação (`README.md`, documentação da API, guias de teste).
 * **Autoria Humana:** Todas as decisões críticas (escolha do PostgreSQL, modelagem do banco de dados relacional, lógica de *mapping* dos dados) e a integração final dos módulos foram realizadas pelo desenvolvedor, que manteve a responsabilidade total e a autoria sobre o código final.
 
@@ -108,4 +106,4 @@ Esta seção é dedicada à transparência no processo de desenvolvimento deste 
 
 Desenvolvido por **Samuel Bello**.
 
-![LinkedIn](https://www.linkedin.com/in/samuelbellosb/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samuelbellosb/)
