@@ -18,6 +18,14 @@ A documentação completa das rotas, com exemplos de requisição e resposta, po
 
 ---
 
+## 📚 Questões Teóricas
+
+Além do desenvolvimento prático da API, este repositório contém um material com resolução de questões teóricas fundamentais sobre **JavaScript**, **SQL** e **Integração de Sistemas**
+
+🔗 **[Acessar Questões Resolvidas](https://github.com/SamuelBelloSB/Teste-JitterBit/blob/main/questoes/questoes.md)**
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 * **Node.js**: Ambiente de execução JavaScript.
@@ -88,6 +96,8 @@ O projeto possui relacionamento **1:N** (Um para Muitos), onde um Pedido pode te
 
 * **Tabela `orders`**: `orderId` (PK), `value`, `creationDate`.
 * **Tabela `items`**: `id` (PK), `orderId` (FK), `productId`, `quantity`, `price`.
+
+---
 
 ## 🤖 Transparência e Inteligência Artificial (IA)
 
